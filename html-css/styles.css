@@ -12,3 +12,100 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+
+ body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    padding: 20px;
+    background-color: rgb(37, 37, 37);
+}
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: rgb(42, 171, 226);
+    display: inline-block;
+    padding-right: 900px;
+}
+nav {
+    display: inline;
+}
+a {
+    margin: 2%;
+    color: white;
+    text-decoration: none;
+}
+.placeholder {
+    width: 175px;
+    margin: 25px;
+}
+.profile {
+    width: 225px;
+}
+main {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#mainrow {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 10%;
+}
+article > p {
+    padding-bottom: 30px;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+#profile {
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.308);
+    padding: 20px;
+    padding-bottom: 1px;
+    margin-bottom: 30px;
+    margin-top: 35px;
+}
+#profile > h2 {
+    text-align: center;
+}
+#articles {
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.308);
+    padding: 20px;
+}
+#articles > h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+footer p {
+    padding: 20px;
+    background-color: rgb(42, 171, 226);
+    font-weight: bold;
+}
+li {
+    margin: 7px;
+    margin-left: 20px;
+}
+#bubble {
+    background-color: rgb(42, 171, 226);
+    border: 5px solid black;
+    float: right;
+    padding: 15px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 25px;
+    margin: 5px;
+    position: sticky;
+    bottom: 0;
+}
