@@ -37,6 +37,10 @@ let foods = [
 
 //CODE HERE
 
+foods.forEach(function(el){
+  el.calories = (el.carbs * 4) + (el.protein * 4) + (el.fat * 9)
+});
+
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
   For problems 2-4, you will be working with the products array below.
@@ -82,6 +86,11 @@ const products = [
 
 //CODE HERE
 
+let saleProducts = products
+saleProducts.map((element) => {
+  element.price = element.price * .75
+});
+
 ////////////////////PROBLEM 3////////////////////
 /*
   A customer has placed an order - they want one of every product that has blue on it. 
@@ -92,6 +101,13 @@ const products = [
 
 //CODE HERE
 
+let blueProducts = saleProducts.filter((element) => {
+  if (element.color.includes("blue")){
+    return true
+  }
+});
+
+
 ////////////////////PROBLEM 4////////////////////
 /*
   Now you'd like to get them their order total. 
@@ -100,6 +116,10 @@ const products = [
 */
 
 //CODE HERE
+
+let orderTotal = blueProducts.reduce((acc, element) => {
+  return (acc += element.price)
+}, 0);
 
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
@@ -131,6 +151,8 @@ const shippingInfo = {
 
 //CODE HERE
 
+let helensInfo = Object.assign({}, contactInfo, shippingInfo)
+
 ////////////////////PROBLEM 6////////////////////
 /*
   Helen has a daughter named Ellen that lives at the same address.
@@ -140,12 +162,18 @@ const shippingInfo = {
 
 //CODE HERE
 
+let ellensInfo = {...helensInfo};
+ellensInfo.name = "Ellen";
+ellensInfo.email = "ellen@email.com";
+
 ////////////////////PROBLEM 7////////////////////
 /* 
   Save Ellen's email to a new variable using destructuring.
 */
 
 //CODE HERE
+
+let {email} = ellensInfo;
 
 ////////////////////PROBLEM 8////////////////////
 /*
@@ -154,6 +182,8 @@ const shippingInfo = {
 */
 
 //CODE HERE
+
+let {zipCode, state} = shippingInfo;
 
 //////////////////////////////////PROBLEMS 9-11//////////////////////////////////
 /*
@@ -217,6 +247,8 @@ const userInfo = {
 
 //CODE HERE
 
+let shouldAlert = userInfo.settings.alerts;
+
 ////////////////////PROBLEM 10////////////////////
 /*
   Set the value of topic below to the last item in gn@rly_c0der_007's topics array
@@ -225,6 +257,8 @@ const userInfo = {
 
 //CODE HERE
 
+let topic = userInfo.topics[3];
+
 ////////////////////PROBLEM 11////////////////////
 /*
   Set the value of commenterId below to the userId of the first response to 
@@ -232,6 +266,8 @@ const userInfo = {
 */
 
 //CODE HERE
+
+commenterId = userInfo.comments[1].responses[0].userId;
 
 ////////////////////PROBLEM 12////////////////////
 /*
@@ -251,6 +287,30 @@ const userInfo = {
 */
 
 //CODE HERE
+
+let person = {
+  name: "Aaron",
+  age: 20,
+  jobs: ["job1", "job2", "job3"],
+  birthday: function(){
+    this.age += 1
+  },
+  favorites: {
+    color: "grey",
+    number: 7,
+    book: "book1",
+  },
+  kids: [
+    {
+      name: "kid1",
+      age: 12
+    },
+    {
+      name: "kid2",
+      age: 10
+    }
+  ]
+}
 
 //////////////////////////////////PROBLEMS 13-14//////////////////////////////////
 /*
@@ -276,7 +336,7 @@ const workout = {
 //let context1 = myFunc
 //let context1 = window
 //let context1 = global
-// let context1 = workout
+let context1 = workout
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -289,6 +349,6 @@ function myFunc() {
 }
 
 //let context2 = myFunc
-// let context2 = window
+let context2 = window
 //let context2 = global
 //let context2 = workout
